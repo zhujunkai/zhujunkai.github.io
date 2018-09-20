@@ -296,6 +296,211 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/搭建私有云/2018-09-20-Pri-cloud.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="722_King">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/搭建私有云/2018-09-20-Pri-cloud.html" itemprop="url">Pri_cloud</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T00:48:20+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搭建私有云/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建私有云</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p>
+<h2><span id="1-shi-yan-mu-de">1.实验目的</span><a href="#1-shi-yan-mu-de" class="header-anchor">#</a></h2>
+<p>1.初步了解虚拟化技术，理解云计算的相关概念<br><br>
+2.为后续课程提供统一的编程与实验环境<br><br>
+3.理解系统工程师面临的困境<br></p>
+<h2><span id="2-shi-yan-huan-jing-yu-yao-qiu">2.实验环境与要求</span><a href="#2-shi-yan-huan-jing-yu-yao-qiu" class="header-anchor">#</a></h2>
+<ul>
+<li>用户通过互联网，使用微软远程桌面，远程访问你在PC机上创建的虚拟机</li>
+<li>虚拟机操作系统 Centos，Ubuntu，或 你喜欢的 Linux 发行版，能使用 NAT 访问外网。</li>
+</ul>
+<h2><span id="3-shi-yan-nei-rong">3. 实验内容</span><a href="#3-shi-yan-nei-rong" class="header-anchor">#</a></h2>
+<h3><span id="1-an-zhuang-vmware"> 1.安装 VMWare</span><a href="#1-an-zhuang-vmware" class="header-anchor">#</a></h3>
+进入官网，选择合适版本的VMWare进行下载，并根据流程一步一步的完成安装. &nbsp; [官网下载](https://www.vmware.com/)<br>
+<h3><span id="2-shi-yong-vmware-pei-zhi-xu-ni-ji"> 2.使用VMware配置虚拟机</span><a href="#2-shi-yong-vmware-pei-zhi-xu-ni-ji" class="header-anchor">#</a></h3>
+<p>创建一个虚拟机。这里选择的是CentOS7的精简版（Minimal ISO），可以在CentOS官网下载（节点可选择清华开源镜像站高速下载，速度较快）。<br></p>
+<p>打开VMWare，创建虚拟机：</p>
+<ul>
+<li>创建新的虚拟机</li>
+<li>选择“典型（推荐）”</li>
+<li>客户机操作系统选择Linux，版本为CentOS 64位</li>
+<li>选择虚拟机安装位置</li>
+<li>磁盘大小选择30g或以上</li>
+<li>内存选择2G ，双核</li>
+<li>完成</li>
+</ul>
+<p>接着，就是虚拟机网络设置，VMWare已经配置好了NAT模式和仅主机模式，所以进入后就可以直接连外网和主机了。</p>
+<h3><span id="3-an-zhuang-xu-ni-ji"> 3.安装虚拟机</span><a href="#3-an-zhuang-xu-ni-ji" class="header-anchor">#</a></h3>
+<ul>
+<li>启动虚拟机会进入centos的安装程序。按照安装程序一步一步来。</li>
+<li>安装位置，选择自动分区即可</li>
+<li>打开”网络与主机名“设置，把网卡打开，并且修改主机名</li>
+<li>开始安装</li>
+<li>设置root密码，可以创建用户</li>
+<li>安装完重启,登入时如果没有用户，则可用用户名为root的方式登入</li>
+<li>升级os内核
+<ul>
+<li><code>yum install wget</code> 获取 wget</li>
+<li><code>yum update</code> 升级 OS 内核。</li>
+</ul>
+</li>
+<li>检查网络
+<ul>
+<li><code>ping www.baidu.com</code> 检查外网(这里我之前出现了一个DNS域名解析的bug，误以为网络问题，且未解决，可尝试连接外网的ip，如百度的119.75.217.109)</li>
+<li><code>ping 192.168.100.1</code> 检查内网</li>
+</ul>
+</li>
+</ul>
+<h3><span id="4-fu-zhi-xu-ni-ji"> 4.复制虚拟机</span><a href="#4-fu-zhi-xu-ni-ji" class="header-anchor">#</a></h3>
+<ul>
+<li>右键点击centos-base虚拟机，选择【管理】-&gt;【克隆】</li>
+<li>选择链接复制</li>
+<li>VMWare应该是自带修改MAC地址的，就不用手动改了</li>
+<li><code>vim /etc/ssh/sshd_config</code>把里面<code>Port 22</code>前的<code>#</code>去掉，以及<code>PermitRootLogin yes</code>前面的<code>#</code>去掉。</li>
+<li>然后<code>service sshd start</code>开启服务</li>
+<li>用<code>ssh 用户名@虚拟机ip地址</code>去访问虚拟机</li>
+</ul>
+<h3><span id="5-yuan-cheng-lian-jie"> 5.远程连接</span><a href="#5-yuan-cheng-lian-jie" class="header-anchor">#</a></h3>
+<ul>
+<li>选择编辑–虚拟网络编辑器</li>
+<li>点击NAT设置，弹出一个设置窗口</li>
+<li>添加一个端口转发</li>
+<li>配置路由器</li>
+<li>就可以连接了</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/搭建博客/2016-11-09-hello-world.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,13 +595,13 @@
         
           
             <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2><span id="quick-start">Quick Start</span><a href="#quick-start" class="header-anchor">#</a></h2><h3><span id="create-a-new-post">Create a new post</span><a href="#create-a-new-post" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3><span id="run-server">Run server</span><a href="#run-server" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3><span id="generate-static-files">Generate static files</span><a href="#generate-static-files" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span><a href="#deploy-to-remote-sites" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
@@ -483,7 +688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +699,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -505,7 +710,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
