@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Pri_cloud]]></title>
-    <url>%2Fposts%2F%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91%2F2018-09-20-Pri-cloud.html</url>
+    <title><![CDATA[VMware 搭建私有云]]></title>
+    <url>%2Fposts%2F%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%2F2018-09-20-Pri-cloud.html</url>
     <content type="text"><![CDATA[1.实验目的# 1.初步了解虚拟化技术，理解云计算的相关概念 2.为后续课程提供统一的编程与实验环境 3.理解系统工程师面临的困境 2.实验环境与要求# 用户通过互联网，使用微软远程桌面，远程访问你在PC机上创建的虚拟机 虚拟机操作系统 Centos，Ubuntu，或 你喜欢的 Linux 发行版，能使用 NAT 访问外网。 3. 实验内容# 1.安装 VMWare# 进入官网，选择合适版本的VMWare进行下载，并根据流程一步一步的完成安装. &nbsp; [官网下载](https://www.vmware.com/) 2.使用VMware配置虚拟机# 创建一个虚拟机。这里选择的是CentOS7的精简版（Minimal ISO），可以在CentOS官网下载（节点可选择清华开源镜像站高速下载，速度较快）。 打开VMWare，创建虚拟机： 创建新的虚拟机 选择“典型（推荐）” 客户机操作系统选择Linux，版本为CentOS 64位(VMWare会自动识别，在VBox这里不要改版本，因为CentOS本身就是继承Red Hat的系统) 选择虚拟机安装位置 磁盘大小选择30g或以上 内存选择2G ，双核（有条件就不用拘泥了） 完成 接着，就是虚拟机网络设置，VMWare已经配置好了NAT模式和仅主机模式，所以进入后就可以直接连外网和主机了。 3.安装虚拟机# 启动虚拟机会进入centos的安装程序。按照安装程序一步一步来。 安装位置，选择自动分区即可 打开”网络与主机名“设置，把网卡打开，并且修改主机名 开始安装 设置root密码，可以创建用户 安装完重启,登入时如果没有用户，则可用用户名为root的方式登入 升级os内核 yum install wget 获取 wget yum update 升级 OS 内核。 检查网络 ping www.baidu.com 检查外网(这里我之前出现了一个DNS域名解析的bug，误以为网络问题，且未解决，可尝试连接外网的ip，如百度的119.75.217.109) ping 192.168.100.1 检查内网 ifconfig 查看网络 nmtui 配置网络 4.复制虚拟机# 右键点击centos-base虚拟机，选择【管理】-&gt;【克隆】 选择链接复制 VMWare应该是自带修改MAC地址的，就不用手动改了 vim /etc/ssh/sshd_config把里面Port 22前的#去掉，以及PermitRootLogin yes前面的#去掉。 然后service sshd start开启服务 用ssh 用户名@虚拟机ip地址去访问虚拟机 5.远程连接# 选择编辑–虚拟网络编辑器 点击NAT设置，弹出一个设置窗口 添加一个端口转发 配置路由器 就可以通过WAN口IP连接了(ssh -p 端口号 用户名@WAN口IP) 6.远程桌面连接# yum -y groupinstall &quot;GNOME Desktop&quot; 安装桌面 ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target 设置启动目标为桌面 重启 安装epel 、xrdp、tigervnc-server yum install epel-release yum install xrdp yum install tigervnc-server 关闭防火墙，启动xrdp systemctl stop firewalld systemctl disable firewalld systemctl start xrdp systemctl enable xrdp 这样就实现了远程桌面连接]]></content>
       <categories>
-        <category>搭建私有云</category>
+        <category>服务计算</category>
       </categories>
       <tags>
-        <tag>云，服务计算，颓</tag>
+        <tag>云</tag>
+        <tag>服务计算</tag>
+        <tag>颓</tag>
       </tags>
   </entry>
   <entry>
