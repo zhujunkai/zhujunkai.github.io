@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="npm,hexo,github," />
+  <meta name="keywords" content="go,服务计算,http," />
 
 
 
@@ -79,18 +79,28 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
-<meta name="keywords" content="npm,hexo,github">
+<meta name="description" content="简单的web服务器# 这是一个简单的输出hello world！的web服务器，只用在客户端访问 http://localhost:9090/ 就可以获得响应内容。 1234567891011121314151617181920package mainimport (    &quot;fmt&quot;    &quot;net/http&quot;    &quot;strings&quot;    &quot;log&quot;)func sayhelloName(w">
+<meta name="keywords" content="go,服务计算,http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/posts/搭建博客/2016-11-09-hello-world.html">
+<meta property="og:title" content="Go的http包源码分析">
+<meta property="og:url" content="http://yoursite.com/posts/服务计算/2018-11-15-Go-http.html">
 <meta property="og:site_name" content="722_King">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
+<meta property="og:description" content="简单的web服务器# 这是一个简单的输出hello world！的web服务器，只用在客户端访问 http://localhost:9090/ 就可以获得响应内容。 1234567891011121314151617181920package mainimport (    &quot;fmt&quot;    &quot;net/http&quot;    &quot;strings&quot;    &quot;log&quot;)func sayhelloName(w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T09:11:45.605Z">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423962030112.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423964157602.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423965765478.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423965988590.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423966877001.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423967782107.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423968492689.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423977404158.jpg">
+<meta property="og:image" content="http://yoursite.com/posts/服务计算/Go-http/15423976658701.jpg">
+<meta property="og:updated_time" content="2018-11-16T20:11:43.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
+<meta name="twitter:title" content="Go的http包源码分析">
+<meta name="twitter:description" content="简单的web服务器# 这是一个简单的输出hello world！的web服务器，只用在客户端访问 http://localhost:9090/ 就可以获得响应内容。 1234567891011121314151617181920package mainimport (    &quot;fmt&quot;    &quot;net/http&quot;    &quot;strings&quot;    &quot;log&quot;)func sayhelloName(w">
+<meta name="twitter:image" content="http://yoursite.com/posts/服务计算/Go-http/15423962030112.jpg">
 
 
 
@@ -120,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/搭建博客/2016-11-09-hello-world.html"/>
+  <link rel="canonical" href="http://yoursite.com/posts/服务计算/2018-11-15-Go-http.html"/>
 
 
 
 
 
-  <title>Hello World | 722_King</title>
+  <title>Go的http包源码分析 | 722_King</title>
   
 
 
@@ -297,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/搭建博客/2016-11-09-hello-world.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/服务计算/2018-11-15-Go-http.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Zhu">
@@ -314,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Go的http包源码分析</h1>
         
 
         <div class="post-meta">
@@ -326,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T00:00:00+08:00">
-                2016-11-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T15:39:22+08:00">
+                2018-11-15
               </time>
             
 
@@ -349,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
+                  <a href="/categories/服务计算/" itemprop="url" rel="index">
+                    <span itemprop="name">服务计算</span>
                   </a>
                 </span>
 
@@ -391,20 +401,54 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start"> Quick Start</span><a href="#quick-start" class="header-anchor">#</a></h2>
-<h3><span id="create-a-new-post"> Create a new post</span><a href="#create-a-new-post" class="header-anchor">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server"> Run server</span><a href="#run-server" class="header-anchor">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files"> Generate static files</span><a href="#generate-static-files" class="header-anchor">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites"> Deploy to remote sites</span><a href="#deploy-to-remote-sites" class="header-anchor">#</a></h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1><span id="jian-dan-de-web-fu-wu-qi">简单的web服务器</span><a href="#jian-dan-de-web-fu-wu-qi" class="header-anchor">#</a></h1>
+这是一个简单的输出hello world！的web服务器，只用在客户端访问 http://localhost:9090/ 就可以获得响应内容。
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"net/http"</span></span><br><span class="line">    <span class="string">"strings"</span></span><br><span class="line">    <span class="string">"log"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayhelloName</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">    w.Write([]<span class="keyword">byte</span>(<span class="string">"Hello World!"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    http.HandleFunc(<span class="string">"/"</span>, sayhelloName)       <span class="comment">//设置访问的路由</span></span><br><span class="line">    err := http.ListenAndServe(<span class="string">":9090"</span>, <span class="literal">nil</span>) <span class="comment">//设置监听的端口</span></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(<span class="string">"ListenAndServe: "</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码很简单，就主要是是用了两个函数，首先调用http.HandleFunc()设置路由和响应处理函数，然后用http.ListenAndServe()去监听端口，就好了。</p>
+<h2><span id="handlefunc-fen-xi">HandleFunc()分析</span><a href="#handlefunc-fen-xi" class="header-anchor">#</a></h2>
+<p>http.HandleFunc()的定义，用来使用对应的函数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HandleFunc registers the handler function for the given pattern.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(mux *ServeMux)</span> <span class="title">HandleFunc</span><span class="params">(pattern <span class="keyword">string</span>, handler <span class="keyword">func</span>(ResponseWriter, *Request)</span>)</span> &#123;</span><br><span class="line">	mux.Handle(pattern, HandlerFunc(handler))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出来上面就是用来mux.Handle函数，Http包默认的路由器：DefaultServeMux, 它的ServeMux的结构看起来好像很简单。<br><br>
+上述代码中，实现了Handler接口的ServeHTTP方法。使用HandlerFunc类型包装一下路由定义的indexHandler函数，其目的就是为了让这个函数也实现ServeHTTP方法，即转变成一个handler处理器(函数)。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ServeMux <span class="keyword">struct</span> &#123;</span><br><span class="line">    mu    sync.RWMutex</span><br><span class="line">    m     <span class="keyword">map</span>[<span class="keyword">string</span>]muxEntry</span><br><span class="line">    hosts <span class="keyword">bool</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> muxEntry <span class="keyword">struct</span> &#123;</span><br><span class="line">    explicit <span class="keyword">bool</span></span><br><span class="line">    h        Handler</span><br><span class="line">    pattern  <span class="keyword">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ServeMux里最重要的应该就是m了，这个map的key是一些url模式，value是一个muxEntry结构，后者里定义存储了具体的url模式和handler。<br><br>
+根据HandleFunc的输入就可以，开始调用mux.Handle函数了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Handle registers the handler for the given pattern.</span></span><br><span class="line"><span class="comment">// If a handler already exists for pattern, Handle panics.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(mux *ServeMux)</span> <span class="title">Handle</span><span class="params">(pattern <span class="keyword">string</span>, handler Handler)</span></span> &#123;</span><br><span class="line">	mux.mu.Lock()</span><br><span class="line">	<span class="keyword">defer</span> mux.mu.Unlock()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> pattern == <span class="string">""</span> &#123;</span><br><span class="line">	   <span class="keyword">if</span> pattern == <span class="string">""</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(<span class="string">"http: invalid pattern "</span> + pattern)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> handler == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(<span class="string">"http: nil handler"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> mux.m[pattern].explicit &#123;</span><br><span class="line">        <span class="built_in">panic</span>(<span class="string">"http: multiple registrations for "</span> + pattern)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> mux.m == <span class="literal">nil</span> &#123;</span><br><span class="line">        mux.m = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]muxEntry)</span><br><span class="line">    &#125;</span><br><span class="line">    mux.m[pattern] = muxEntry&#123;explicit: <span class="literal">true</span>, h: handler, pattern: pattern&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> pattern[<span class="number">0</span>] != <span class="string">'/'</span> &#123;</span><br><span class="line">        mux.hosts = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    n := <span class="built_in">len</span>(pattern)</span><br><span class="line">    <span class="keyword">if</span> n &gt; <span class="number">0</span> &amp;&amp; pattern[n<span class="number">-1</span>] == <span class="string">'/'</span> &amp;&amp; !mux.m[pattern[<span class="number">0</span>:n<span class="number">-1</span>]].explicit &#123;</span><br><span class="line"></span><br><span class="line">        path := pattern</span><br><span class="line">        <span class="keyword">if</span> pattern[<span class="number">0</span>] != <span class="string">'/'</span> &#123;</span><br><span class="line">            path = pattern[strings.Index(pattern, <span class="string">"/"</span>):]</span><br><span class="line">        &#125;</span><br><span class="line">        url := &amp;url.URL&#123;Path: path&#125;</span><br><span class="line">        mux.m[pattern[<span class="number">0</span>:n<span class="number">-1</span>]] = muxEntry&#123;h: RedirectHandler(url.String(), StatusMovedPermanently), pattern: pattern&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由此可见，Handle函数的主要目的在于把handler和pattern模式绑定到map[string]muxEntry的map上，其中muxEntry保存了更多pattern和handler的信息，</p>
+<h2><span id="listenandserve-fen-xi">ListenAndServe()分析</span><a href="#listenandserve-fen-xi" class="header-anchor">#</a></h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ListenAndServe</span><span class="params">(addr <span class="keyword">string</span>, handler Handler)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	server := &amp;Server&#123;Addr: addr, Handler: handler&#125;</span><br><span class="line">	<span class="keyword">return</span> server.ListenAndServe()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先实例化一个Server对象，然后调用 (Server) ListenAndServe()方法进行监听：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(srv *Server)</span> <span class="title">ListenAndServe</span><span class="params">()</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	addr := srv.Addr</span><br><span class="line">	<span class="keyword">if</span> addr == <span class="string">""</span> &#123;</span><br><span class="line">		addr = <span class="string">":http"</span></span><br><span class="line">	&#125;</span><br><span class="line">	ln, err := net.Listen(<span class="string">"tcp"</span>, addr)    <span class="comment">//监听端口</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> srv.Serve(tcpKeepAliveListener&#123;ln.(*net.TCPListener)&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数 srv.Serve()函数启动一个for循环，然后在循环体中Accept请求，对每个请求实例化一个Conn，并且开启一个goroutine为这个请求进行服务go c.serve()。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(srv *Server)</span> <span class="title">Serve</span><span class="params">(l net.Listener)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	<span class="keyword">defer</span> l.Close()</span><br><span class="line">	<span class="keyword">var</span> tempDelay time.Duration <span class="comment">// how long to sleep on accept failure</span></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		rw, e := l.Accept() <span class="comment">//通过Listener接收请求</span></span><br><span class="line">		<span class="keyword">if</span> e != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> ne, ok := e.(net.Error); ok &amp;&amp; ne.Temporary() &#123;</span><br><span class="line">				<span class="keyword">if</span> tempDelay == <span class="number">0</span> &#123;</span><br><span class="line">					tempDelay = <span class="number">5</span> * time.Millisecond</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					tempDelay *= <span class="number">2</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> max := <span class="number">1</span> * time.Second; tempDelay &gt; max &#123;</span><br><span class="line">					tempDelay = max</span><br><span class="line">				&#125;</span><br><span class="line">				log.Printf(<span class="string">"http: Accept error: %v; retrying in %v"</span>, e, tempDelay)</span><br><span class="line">				time.Sleep(tempDelay)</span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> e</span><br><span class="line">		&#125;</span><br><span class="line">		tempDelay = <span class="number">0</span></span><br><span class="line">		c, err := srv.newConn(rw) <span class="comment">//创建一个Conn。Conn是net包里面的一个接口 type Conn interface。Conn接口代表通用的面向流的网络连接。多个线程可能会同时调用同一个Conn的方法。</span></span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">go</span> c.serve() <span class="comment">//Go语言高并发的体现</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1><span id="da-jian-yi-ge-web-fu-wu-qi">搭建一个web服务器</span><a href="#da-jian-yi-ge-web-fu-wu-qi" class="header-anchor">#</a></h1>
+<p>一个简单的服务器，所以就没有使用牛逼的框架，就用了老师给的 “<a href="http://github.com/codegangsta/negroni%22%E3%80%81%22github.com/gorilla/mux%22%E3%80%81%22github.com/unrolled/render" target="_blank" rel="noopener">github.com/codegangsta/negroni&quot;、“github.com/gorilla/mux”、&quot;github.com/unrolled/render</a>” 这三个。</p>
+<h2><span id="server-zhu-ce-lu-you">Server注册路由</span><a href="#server-zhu-ce-lu-you" class="header-anchor">#</a></h2>
+<hr>
+<p>用HandleFunc给每种访问提供对应的处理路由。<br><br>
+<img src="Go-http/15423962030112.jpg" alt=""></p>
+<h2><span id="biao-dan-chu-li">表单处理</span><a href="#biao-dan-chu-li" class="header-anchor">#</a></h2>
+<hr>
+<p>通过PaeseForm，提取表单内部的数据值。<br><br>
+<img src="Go-http/15423964157602.jpg" alt=""></p>
+<h2><span id="chu-li-wan-hui-ying">处理完回应</span><a href="#chu-li-wan-hui-ying" class="header-anchor">#</a></h2>
+<hr>
+<p>将你的数据转化成页面写上去。<br><br>
+<img src="Go-http/15423965765478.jpg" alt=""></p>
+<p><img src="Go-http/15423965988590.jpg" alt=""></p>
+<h2><span id="shi-xian-xiao-guo">实现效果</span><a href="#shi-xian-xiao-guo" class="header-anchor">#</a></h2>
+<hr>
+<p>登入<br><br>
+<img src="Go-http/15423966877001.jpg" alt=""></p>
+<p>注册，传表单<br><br>
+<img src="Go-http/15423967782107.jpg" alt=""></p>
+<p>登入查看对应内容<br></p>
+<p><img src="Go-http/15423968492689.jpg" alt=""></p>
+<p>静态文件服务<br></p>
+<p><img src="Go-http/15423977404158.jpg" alt=""></p>
+<p>/unknown <br></p>
+<p><img src="Go-http/15423976658701.jpg" alt=""></p>
+<p><a href="https://github.com/zhujunkai/SeviceComputing-learning/tree/master/go-web" target="_blank" rel="noopener">代码连接</a></p>
 
       
     </div>
@@ -422,11 +466,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/npm/" rel="tag"># npm</a>
+            <a href="/tags/go/" rel="tag"># go</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/服务计算/" rel="tag"># 服务计算</a>
           
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/http/" rel="tag"># http</a>
           
         </div>
       
@@ -439,15 +483,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/posts/服务计算/2018-09-27-Go-some.html" rel="next" title="centos7下搭建Golang">
+                <i class="fa fa-chevron-left"></i> centos7下搭建Golang
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/服务计算/2018-09-20-Pri-cloud.html" rel="prev" title="VMware 搭建私有云">
-                VMware 搭建私有云 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"> Quick Start#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text"> Create a new post#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text"> Run server#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text"> Generate static files#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text"> Deploy to remote sites#</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">简单的web服务器#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">HandleFunc()分析#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">ListenAndServe()分析#</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">搭建一个web服务器#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">Server注册路由#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">表单处理#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">处理完回应#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.4.</span> <span class="nav-text">实现效果#</span></a></li></ol></li></ol></div>
             
 
           </div>
