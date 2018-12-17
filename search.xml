@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Swapi-xd]]></title>
     <url>%2Fposts%2F%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%2F2018-12-16-Swapi-xd.html</url>
-    <content type="text"><![CDATA[123#]]></content>
+    <content type="text"><![CDATA[Vue构建swapi前端的心得# 这次制作swapi的前端使用了vue架构，这个架构确实很方便，大致上的模仿复制了swpai的网站 开发过程# vue-cli的基本结构 我们需要去修改的文件基本上就是那个src里面的文件了。 首先是App.vue，在这里我主要书写了关于整个页面外面的框架，然后通过点击里面导航栏里面的按钮结合router实现相对应的页面跳转。 并且在js文件里面配置那个router 然后根据页面的内容进行相应的布局，在about和docu两个页面里面使用markdown-loader去允许读取md文件，并且vue-markdown去显示md文件。 然后在md内置a的tag就可以实现那个点击的跳转了。 在主页面里面用一个pre去显示那个json的输出口 关于那个api的请求，则是使用axios去发出请求并且处理response就可以显示结果了。 最后网页是大致与原站差不多的。]]></content>
       <categories>
         <category>服务计算</category>
       </categories>
