@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[系统分析与设计-hw6]]></title>
+    <url>%2Fposts%2F%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%2F2019-05-04-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1-hw6.html</url>
+    <content type="text"><![CDATA[1、使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键 注意事项： 对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段 数据建模，为了简化描述仅需要给出表清单，例如： Hotel（ID/Key，Name，LoctionID/Fkey，Address……） Hotel (ID/Key, LocationID/FKey, Name, Address, Star, Brief-intro, isFavourites, isLowestPrice, isHigestStarRating, isAlphabetical)) Location (ID/Key, Name, isFavourite) Room (ID/Key, HotelID/FKey, Type, Date, isAvailable, isReserved, Price) Traveler (ID/Key, Name, Email) Reservation (ID/Key, TravelerID/FKey, HotelID/FKey, CheckInDate, NumberofNights) ReservationItem (ID/Key, ReservationID/FKey, RoomID/Fkey, AdultsNum, ChildrenNum, ChildrenAge) Payment (ID/Key, ReservationID/FKey, Date, Time, Total) PaymentItem (ID/Key, PaymentID/FKey, Details) CreditCard (ID/Key, CustomerID/FKey, PaymentID/FKey, Type) CreditCardDetail (ID/Key, CreditCardID/FKey, PaymentItemID/FKey, Number, SecurityCode, ExpiryDate) AddressDetail (ID/Key, PaymentItemID/FKey, Name, Address, City, State, Country) 2、使用 UML State Model，对每个订单对象生命周期建模 建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。 建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。]]></content>
+      <categories>
+        <category>系统分析与设计</category>
+      </categories>
+      <tags>
+        <tag>系统分析与设计</tag>
+        <tag>hw</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[系统分析与设计-hw5]]></title>
+    <url>%2Fposts%2F%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%2F2019-05-04-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1-hw5.html</url>
+    <content type="text"><![CDATA[1、根据订旅馆建模文档，Asg-RH.pdf： 绘制用例图模型（到子用例） 给出 make reservation 用例的活动图 2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景 分别用多泳道图建模三个场景的业务过程 根据上述流程，给出快递柜系统最终的用例图模型 用正常色彩表示第一个业务流程反映的用例 用绿色背景表述第二个业务场景添加或修改的用例，以及支持 Actor 用黄色背景表述第三个业务场景添加或修改的用例，以及支持 Actor]]></content>
+      <categories>
+        <category>系统分析与设计</category>
+      </categories>
+      <tags>
+        <tag>系统分析与设计</tag>
+        <tag>hw</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[系统分析与设计-hw4]]></title>
     <url>%2Fposts%2F%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%2F2019-04-10-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1-hw4.html</url>
     <content type="text"><![CDATA[1、简答题 用例的概念 用例是软件工程或系统工程中对系统如何反应外界请求的描述，是一种通过用户的使用场景来获取需求的技术。 用例和场景的关系？什么是主场景或 happy path？ 每个用例提供了一个或多个场景，该场景说明了系统是如何和最终用户或其它系统互动，也就是谁可以用系统做什么，从而获得一个明确的业务目标。 主成功场景是用例最基本的组成部分,它描述了满足涉众关注点的典型成功路径。 用例有哪些形式？ 在不同的团队情况也可能导致用例书写的不一样。比如在一个大型的开发项目组里，就需要严格的按照用例范例进行描述，而在一个小型的沟通频繁的项目组里，则可以采用一种比较简单的描述方式。 用例的格式有：完整正式的格式、非正式、单列表格式、双列表格式、RUP格式、条件语句格式、Occam格式、图形方式、UML用例图 对于复杂业务，为什么编制完整用例非常难？ 复杂的业务，会涉及到很多的参与者，场景，实例之类的，而且会难以耦合，因此，对于这种业务，会很难去编制一个相对完整的用例。 什么是用例图？ 用例图是指由参与者（Actor）、用例（Use Case），边界以及它们之间的关系构成的用于描述系统功能的视图。用例图（User Case）是外部用户（被称为参与者）所能观察到的系统功能的模型图。用例图是系统的蓝图。用例图呈现了一些参与者，一些用例，以及它们之间的关系，主要用于对系统、子系统或类的功能行为进行建模。 用例图的基本符号与元素？ 小人：参与者。 椭圆：用例 大方框：系统，可以是小型软件组件，也可以是完整的应用程序，里面包含外部可见的功能。 箭头：参与者和系统通过相互发送信号或消息进行交互的关联关系，包括关联、泛化、包含、扩展。 用例图的画法与步骤 确定研讨的系统：使用用例图 System框 表示一个待研究的系统，正确命名系统或子系统 识别 Actors：1.识别使用系统的主要参与者（primary actors）/角色(roles)，使用用例图 actor符号 表示，通常放在系统的左边。2.识别系统依赖的外部系统，使用用例图 Neighboursystem框 表示。 识别用例（服务）：识别用户级别用例，识别子功能级别的用例，正确使用用例与子用例之间的关系 建立 Actor 和 Use Cases 之间的关联，使用 无方向连线，表示两间之间是双向交互的协议 用例图给利益相关人与开发者的价值有哪些？ 获取需求、指导测试、还可在整个过程中的其它工作流起到指导作用。 帮助开发团队以一种可视化的方式理解系统的功能需求。 2、建模练习题（用例模型） 1- 选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、定电影票、背单词APP等，分别绘制它们用例图。并满足以下要求： 请使用用户的视角，描述用户目标或系统提供的服务 粒度达到子用例级别，并用 include 和 exclude 关联它们 请用色彩标注出你认为创新（区别于竞争对手的）用例或子用例 尽可能识别外部系统和服务 2- 然后，回答下列问题： a.为什么相似系统的用例图是相似的？ 因为相似的系统需要满足的需求也十分相似，因此会有很多类似的功能和类似的拓展功能，因此用例图会比较相似。 b.如果是定旅馆业务，请对比 Asg_RH 用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术 对比之后发现，很显然携程的基本包含了Asg_RH含有的用例，另外它还有很多其他更多的功能 比如，携程拓展了很多其他拓展的业务，比如打车，旅游之类的，因此就会生成一些旅馆加打车券，景点票之类的组合优惠，更好的吸引客户。 交互部分，携程会更加简化，减少一些冗余或者不怎么重要的操作。 现在有了在线支付，所以携程提供了在线支付。 c.如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用 根据用例图中列出的功能可以看到哪些用例是其他系统中没有的，比如携程的低价信息功能，以此强化对这个用例的开发。 d.请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表 ID Name Imp Est How Notes 1 查找酒店 90 30 用户输入目的地、入住日期、退房日期、星级等信息，搜索酒店信息列表 需要对输入信息进行分析、GPS定位系统 2 下订单 100 30 用户选择酒店后，修改一些入住信息，并且确定入住 通过算法展示合适的结果给用户 3 支付 80 10 用户可以选择合适的支付方式 支付成功与否要给予反馈 e.根据任务4，参考 使用用例点估算软件成本，给出项目用例点的估算 用例名称 事务 计算 备注 查找酒店 3 2 简单 下订单 6 4 平均 支付 1 1 简单]]></content>
