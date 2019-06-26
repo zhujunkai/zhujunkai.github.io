@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="go,系统分析与设计," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="把您往煤堆里那么一扔，您要不把您那雪白的牙齿露出来的话，我们还真找不着您。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="722_King">
-<meta property="og:url" content="http://yoursite.com/categories/服务计算/index.html">
+<meta name="description" content="Go Echo使用viper实现配置模块# 1.什么是Viper？# &amp;gt; Viper是Go应用程序的完整配置解决方案。它旨在在应用程序中工作，并可以处理所有类型的配置需求和格式。 它支持：  设置默认值 从JSON，TOML，YAML，HCL和Java属性配置文件中读取 实时观看和重新读取配置文件（可选） 从环境变量中读取 从远程配置系统（etcd或Consul）读取，并观察变化 从命令行标志读取">
+<meta name="keywords" content="go,系统分析与设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go-viper">
+<meta property="og:url" content="http://yoursite.com/posts/系统分析与设计/2019-06-26-go-viper.html">
 <meta property="og:site_name" content="722_King">
-<meta property="og:description" content="把您往煤堆里那么一扔，您要不把您那雪白的牙齿露出来的话，我们还真找不着您。">
+<meta property="og:description" content="Go Echo使用viper实现配置模块# 1.什么是Viper？# &amp;gt; Viper是Go应用程序的完整配置解决方案。它旨在在应用程序中工作，并可以处理所有类型的配置需求和格式。 它支持：  设置默认值 从JSON，TOML，YAML，HCL和Java属性配置文件中读取 实时观看和重新读取配置文件（可选） 从环境变量中读取 从远程配置系统（etcd或Consul）读取，并观察变化 从命令行标志读取">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-26T13:28:48.851Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="722_King">
-<meta name="twitter:description" content="把您往煤堆里那么一扔，您要不把您那雪白的牙齿露出来的话，我们还真找不着您。">
+<meta name="twitter:title" content="go-viper">
+<meta name="twitter:description" content="Go Echo使用viper实现配置模块# 1.什么是Viper？# &amp;gt; Viper是Go应用程序的完整配置解决方案。它旨在在应用程序中工作，并可以处理所有类型的配置需求和格式。 它支持：  设置默认值 从JSON，TOML，YAML，HCL和Java属性配置文件中读取 实时观看和重新读取配置文件（可选） 从环境变量中读取 从远程配置系统（etcd或Consul）读取，并观察变化 从命令行标志读取">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/服务计算/"/>
+  <link rel="canonical" href="http://yoursite.com/posts/系统分析与设计/2019-06-26-go-viper.html"/>
 
 
 
 
 
-  <title>分类: 服务计算 | 722_King</title>
+  <title>go-viper | 722_King</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,167 +283,221 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>服务计算<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/系统分析与设计/2019-06-26-go-viper.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="722_King">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/服务计算/2019-01-19-gRPC.html" itemprop="url">
-              
-                <span itemprop="name">gRPC</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">go-viper</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-19T17:33:01+08:00"
-              content="2019-01-19" >
-          01-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T17:39:22+08:00">
+                2019-06-26
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/系统分析与设计/" itemprop="url" rel="index">
+                    <span itemprop="name">系统分析与设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/服务计算/2018-12-16-Swapi-xd.html" itemprop="url">
-              
-                <span itemprop="name">Swapi-xd</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-16T23:37:10+08:00"
-              content="2018-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/服务计算/2018-11-15-Go-http.html" itemprop="url">
-              
-                <span itemprop="name">Go的web小程序及http包分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-15T15:39:22+08:00"
-              content="2018-11-15" >
-          11-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/服务计算/2018-09-27-Go-some.html" itemprop="url">
-              
-                <span itemprop="name">centos7下搭建Golang</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-27T12:33:08+08:00"
-              content="2018-09-27" >
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/服务计算/2018-09-20-Pri-cloud.html" itemprop="url">
-              
-                <span itemprop="name">VMware 搭建私有云</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-20T00:48:20+08:00"
-              content="2018-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+        <h2><span id="go-echo-shi-yong-viper-shi-xian-pei-zhi-mo-kuai">Go Echo使用viper实现配置模块</span><a href="#go-echo-shi-yong-viper-shi-xian-pei-zhi-mo-kuai" class="header-anchor">#</a></h2>
+<h4><span id="1-shi-me-shi-viper">1.什么是Viper？</span><a href="#1-shi-me-shi-viper" class="header-anchor">#</a></h4>
+> Viper是Go应用程序的完整配置解决方案。它旨在在应用程序中工作，并可以处理所有类型的配置需求和格式。
+<p>它支持：</p>
+<ul>
+<li>设置默认值</li>
+<li>从JSON，TOML，YAML，HCL和Java属性配置文件中读取</li>
+<li>实时观看和重新读取配置文件（可选）</li>
+<li>从环境变量中读取</li>
+<li>从远程配置系统（etcd或Consul）读取，并观察变化</li>
+<li>从命令行标志读取</li>
+<li>从缓冲区读取</li>
+<li>设置显式值</li>
+</ul>
+<p>Viper可以被认为是所有应用程序配置需求的注册表。</p>
+<h4><span id="wei-he-xuan-ze-viper">为何选择Viper？</span><a href="#wei-he-xuan-ze-viper" class="header-anchor">#</a></h4>
+构建应用程序时，不必担心配置文件格式。Viper就是为此提供帮助的。很多时候，我们服务器启动之后，如果临时想修改某些配置参数，需要重启服务器才能生效，但是viper提供了监听函数，可以免重启修改配置参数，非常的实用.
+<h4><span id="viper-du-qu-pei-zhi-wen-jian">Viper读取配置文件</span><a href="#viper-du-qu-pei-zhi-wen-jian" class="header-anchor">#</a></h4>
+Viper需要最少的配置让它知道在哪里查找配置文件。Viper支持JSON，TOML，YAML，HCL和Java Properties文件。Viper可以搜索多个路径，但目前单个Viper实例仅支持单个配置文件。Viper不会默认使用任何配置搜索路径，而是取决于应用程序的定义。
+<p>以下是如何使用Viper搜索和读取配置文件的示例。不需要任何特定路径，但应在预期配置文件的位置提供至少一个路径。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">viper.SetConfigName(<span class="string">"config"</span>) 				<span class="comment">// 配置文件的名称（没有扩展名）</span></span><br><span class="line">viper.AddConfigPath(<span class="string">"/etc/appname/"</span>)   		<span class="comment">// 查找配置文件的路径。</span></span><br><span class="line">viper.AddConfigPath(<span class="string">"$HOME/.appname"</span>)  		<span class="comment">// 多次调用以添加许多搜索路径</span></span><br><span class="line">viper.AddConfigPath(<span class="string">"."</span>)               		<span class="comment">// 可选择在工作目录</span></span><br><span class="line">err := viper.ReadInConfig() 				<span class="comment">// 查找并读取配置文件，</span></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; 							<span class="comment">// 处理读取配置文件的错误</span></span><br><span class="line">	<span class="built_in">panic</span>(fmt.Errorf(<span class="string">"Fatal error config file: %s \n"</span>, err))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>监听并重新读取配置文件:<br>
+Viper支持在运行时让应用程序实时读取配置文件。</p>
+<p>viper驱动的应用程序可以在运行时读取配置文件的更新，而不会错过任何一个节拍。</p>
+<p>只需告诉viper实例watchConfig即可。您可以选择为Viper提供每次发生更改时运行的功能。</p>
+<p>确保在调用之前添加所有configPath WatchConfig()</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">viper.WatchConfig()</span><br><span class="line">viper.OnConfigChange(<span class="function"><span class="keyword">func</span><span class="params">(e fsnotify.Event)</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Config file changed:"</span>, e.Name)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4><span id="viper-shi-yong-huan-jing-bian-liang">Viper使用环境变量</span><a href="#viper-shi-yong-huan-jing-bian-liang" class="header-anchor">#</a></h4>
+<p>Viper完全支持环境变量。有四种方法可以帮助使用ENV：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AutomaticEnv()</span><br><span class="line">BindEnv(<span class="keyword">string</span>...) : error</span><br><span class="line">SetEnvPrefix(<span class="keyword">string</span>)</span><br><span class="line">SetEnvKeyReplacer(<span class="keyword">string</span>...) *strings.Replacer</span><br></pre></td></tr></table></figure>
+<p>BindEnv需要一个或两个参数。第一个参数是键名，第二个是环境变量的名称。环境变量的名称区分大小写。如果未提供ENV变量名，则Viper将自动假设密钥名称与ENV变量名称匹配，但ENV变量为IN ALL CAPS。当您明确提供ENV变量名称时，它不会自动添加前缀。</p>
+<p>使用ENV变量时要认识到的一件重要事情是每次访问时都会读取该值。Viper在BindEnv调用时不会修复该值。</p>
+<p>AutomaticEnv尤其是当与结合了强大的帮手 SetEnvPrefix。调用时，Viper将在任何viper.Get请求发出时检查环境变量。它将适用以下规则。它将检查一个环境变量，其名称与大写的键匹配，并以EnvPrefix前缀。</p>
+<p>SetEnvKeyReplacer允许您使用strings.Replacer对象重写Env键到一定程度。如果要-在Get()调用中使用或使用某些内容 ，但希望环境变量使用_分隔符，则此选项非常有用。可以在中找到使用它的示例viper_test.go</p>
+<h4><span id="viper-de-jian-dan-shi-yong">Viper的简单使用</span><a href="#viper-de-jian-dan-shi-yong" class="header-anchor">#</a></h4>
+Viper 也可以非常方便地读取多个层级的配置，比如这样一个 YAML 格式的配置：
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">common:</span></span><br><span class="line"><span class="attr">    db:</span></span><br><span class="line"><span class="attr">        name:</span> <span class="string">db</span></span><br><span class="line"><span class="attr">        addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:3306</span></span><br><span class="line"><span class="attr">        username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">        password:</span> <span class="string">root</span></span><br></pre></td></tr></table></figure>
+<p>如果要读取name，只需要执行viper.GetString(“<a href="http://common.db.name" target="_blank" rel="noopener">common.db.name</a>”)就可以</p>
+<p>下面来一个简单的例子介绍Viper：<br>
+config/config.go</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> config</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"strings"</span></span><br><span class="line">    <span class="string">"github.com/fsnotify/fsnotify"</span></span><br><span class="line">    <span class="string">"github.com/spf13/viper"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Config <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Init</span><span class="params">(cfg <span class="keyword">string</span>)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">    c := Config&#123;</span><br><span class="line">        Name: cfg,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 初始化配置文件</span></span><br><span class="line">    <span class="keyword">if</span> err := c.initConfig(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    c.watchConfig()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Config)</span> <span class="title">initConfig</span><span class="params">()</span> <span class="title">error</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> c.Name != <span class="string">""</span> &#123;</span><br><span class="line">       <span class="comment">// 如果指定了配置文件，则解析指定的配置文件</span></span><br><span class="line">        viper.SetConfigFile(c.Name)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">// 如果没有指定配置文件，则解析默认的配置文件</span></span><br><span class="line">        viper.AddConfigPath(<span class="string">"conf"</span>)</span><br><span class="line">        viper.SetConfigName(<span class="string">"config"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">// 设置配置文件格式为YAML</span></span><br><span class="line">    viper.SetConfigType(<span class="string">"yaml"</span>)</span><br><span class="line">    <span class="comment">// viper解析配置文件</span></span><br><span class="line">    <span class="keyword">if</span> err := viper.ReadInConfig(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> err</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听配置文件是否改变,用于热更新</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Config)</span> <span class="title">watchConfig</span><span class="params">()</span></span> &#123;</span><br><span class="line">    viper.WatchConfig()</span><br><span class="line">    viper.OnConfigChange(<span class="function"><span class="keyword">func</span><span class="params">(e fsnotify.Event)</span></span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"Config file changed: %s\n"</span>, e.Name)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/go/" rel="tag"># go</a>
+          
+            <a href="/tags/系统分析与设计/" rel="tag"># 系统分析与设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/系统分析与设计/2019-06-26-go-echo-jwt.html" rel="next" title="go_echo_jwt">
+                <i class="fa fa-chevron-left"></i> go_echo_jwt
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -449,6 +505,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTgzMS8xNjM1OA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -469,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Go Echo使用viper实现配置模块#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.什么是Viper？#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">为何选择Viper？#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">Viper读取配置文件#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">Viper使用环境变量#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.5.</span> <span class="nav-text">Viper的简单使用#</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -707,6 +797,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -735,6 +829,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
