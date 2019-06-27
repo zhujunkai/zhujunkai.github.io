@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="722_King">
 <meta property="og:description" content="golang 如何验证struct字段的数据格式# 假设我们有如下结构体： 123456type User struct &amp;#123;    Id    int        Name  string     Bio   string     Email string &amp;#125; 我们需要对结构体内的字段进行验证合法性：  Id的值在某一个范围内。 Name的长度在某一个范围内。 Email格式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-27T12:54:47.063Z">
+<meta property="og:image" content="http://yoursite.com/posts/系统分析与设计/2019-06-27-govalidator/15615713552448.jpg">
+<meta property="og:updated_time" content="2019-06-27T13:02:17.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="govalidator">
 <meta name="twitter:description" content="golang 如何验证struct字段的数据格式# 假设我们有如下结构体： 123456type User struct &amp;#123;    Id    int        Name  string     Bio   string     Email string &amp;#125; 我们需要对结构体内的字段进行验证合法性：  Id的值在某一个范围内。 Name的长度在某一个范围内。 Email格式">
+<meta name="twitter:image" content="http://yoursite.com/posts/系统分析与设计/2019-06-27-govalidator/15615713552448.jpg">
 
 
 
@@ -408,7 +410,7 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">    Id        <span class="keyword">int</span>       <span class="string">`json:"id"`</span></span><br><span class="line">    Name      <span class="keyword">string</span>    <span class="string">`json:"name"`</span></span><br><span class="line">    Bio       <span class="keyword">string</span>    <span class="string">`json:"about,omitempty"`</span></span><br><span class="line">    Active    <span class="keyword">bool</span>      <span class="string">`json:"active"`</span></span><br><span class="line">    Admin     <span class="keyword">bool</span>      <span class="string">`json:"-"`</span></span><br><span class="line">    CreatedAt time.Time <span class="string">`json:"created_at"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>写过golang的基本都用过json:xxx这个用法，json:xxx其实也是一个structTag，只不过这是golang帮你实现好特定用法的structTag。而validate:&quot;number,min=1,max=1000&quot;是我们自定义的structTag。</p>
 <h4><span id="shi-xian-si-lu">实现思路</span><a href="#shi-xian-si-lu" class="header-anchor">#</a></h4>
-![](./2019-06-27-govalidator/15615713552448.jpg)
+<p><img src="/posts/系统分析与设计/./2019-06-27-govalidator/15615713552448.jpg" alt=""></p>
 <p>我们定义一个接口Validator，定义一个方法Validate。再定义有具体意义的验证器例如StringValidator、NumberValidator、EmailValidator来实现接口Validator。<br>
 大致就这样去实现一个Validator。</p>
 <h4><span id="govalidator-bao-de-shi-yong">govalidator包的使用</span><a href="#govalidator-bao-de-shi-yong" class="header-anchor">#</a></h4>
