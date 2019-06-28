@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="##nodejs使用log4js做日志系统 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 ####log4js的安装 安装很简单 1npm install log4js -S ####log4js配置 在项目的根目录添加一个log目录，在该">
+<meta name="description" content="nodejs使用log4js做日志系统# 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 log4js的安装# 安装很简单 1npm install log4js -S log4js配置# 在项目的根目录添加一个log目录，在该目录中新建in">
 <meta name="keywords" content="系统分析与设计,nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="log4js">
 <meta property="og:url" content="http://yoursite.com/posts/系统分析与设计/2019-06-29-log4js.html">
 <meta property="og:site_name" content="722_King">
-<meta property="og:description" content="##nodejs使用log4js做日志系统 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 ####log4js的安装 安装很简单 1npm install log4js -S ####log4js配置 在项目的根目录添加一个log目录，在该">
+<meta property="og:description" content="nodejs使用log4js做日志系统# 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 log4js的安装# 安装很简单 1npm install log4js -S log4js配置# 在项目的根目录添加一个log目录，在该目录中新建in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T19:53:37.454Z">
+<meta property="og:updated_time" content="2019-06-28T20:28:41.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="log4js">
-<meta name="twitter:description" content="##nodejs使用log4js做日志系统 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 ####log4js的安装 安装很简单 1npm install log4js -S ####log4js配置 在项目的根目录添加一个log目录，在该">
+<meta name="twitter:description" content="nodejs使用log4js做日志系统# 在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。 log4js的安装# 安装很简单 1npm install log4js -S log4js配置# 在项目的根目录添加一个log目录，在该目录中新建in">
 
 
 
@@ -391,12 +391,12 @@
       
 
       
-        <p>##nodejs使用log4js做日志系统</p>
+        <h2><span id="nodejs-shi-yong-log4js-zuo-ri-zhi-xi-tong">nodejs使用log4js做日志系统</span><a href="#nodejs-shi-yong-log4js-zuo-ri-zhi-xi-tong" class="header-anchor">#</a></h2>
 <p>在一个项目当中，日志系统在项目中重要性在这里就不再累述，log4js是nodejs中的一个日志模块，通过设置其优先级别，可以打印出不同级别的日志，便于后续的系统分析。下面来介绍一下log4js的具体使用。</p>
-<p>####log4js的安装</p>
+<h4><span id="log4js-de-an-zhuang">log4js的安装</span><a href="#log4js-de-an-zhuang" class="header-anchor">#</a></h4>
 <p>安装很简单</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install log4js -S</span><br></pre></td></tr></table></figure>
-<p>####log4js配置</p>
+<h4><span id="log4js-pei-zhi">log4js配置</span><a href="#log4js-pei-zhi" class="header-anchor">#</a></h4>
 <p>在项目的根目录添加一个log目录，在该目录中新建indexjs，开始配置log4js</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var path = require(&quot;path&quot;);</span><br><span class="line">const log4js = require(&apos;log4js&apos;);</span><br><span class="line">log4js.configure(&#123;</span><br><span class="line">  appenders: &#123;</span><br><span class="line">   cheese: &#123;</span><br><span class="line">    type: &apos;file&apos;,</span><br><span class="line">     filename: &apos;cheese.log&apos;,</span><br><span class="line">     maxLogSize:10,//文件最大存储空间，当文件内容超过文件存储空间会自动生成一个文件test.log.1的序列自增长的文件</span><br><span class="line">	&#125; </span><br><span class="line">&#125;,</span><br><span class="line">  categories: &#123; default: &#123; appenders: [&apos;cheese&apos;], level: &apos;info&apos; &#125; &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const logger = log4js.getLogger(&apos;cheese&apos;);</span><br><span class="line"></span><br><span class="line">module.exports=logger</span><br></pre></td></tr></table></figure>
 <p>filename部分可以设置输出的日志文件名称，直接写名称的话会自动创建在项目的根目录，如果想指定其路径，可以自行添加。</p>
@@ -405,7 +405,7 @@
 <p>根据天来创建日志的配置代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var path = require(&quot;path&quot;);</span><br><span class="line">const log4js = require(&apos;log4js&apos;);</span><br><span class="line">log4js.configure(&#123;</span><br><span class="line">  appenders: &#123;</span><br><span class="line">   cheese: &#123;</span><br><span class="line">    type: &apos;dateFile&apos;,</span><br><span class="line">     filename: &apos;logs/cheese&apos;,</span><br><span class="line">     pattern: &quot;-yyyy-MM-dd.log&quot;,</span><br><span class="line">     alwaysIncludePattern: true,</span><br><span class="line">	 category: &apos;normal&apos;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;,</span><br><span class="line">  categories: &#123; default: &#123; appenders: [&apos;cheese&apos;], level: &apos;info&apos; &#125; &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const logger = log4js.getLogger(&apos;cheese&apos;);</span><br><span class="line"></span><br><span class="line">module.exports=logger</span><br></pre></td></tr></table></figure>
 <p>categories部分设置了其优先等级为info，log4js 的输出级别： trace，debug，info，warn，error，fatal，设置为info后，则只会打印info及其后面的日志。</p>
-<p>####log4js的使用</p>
+<h4><span id="log4js-de-shi-yong">log4js的使用</span><a href="#log4js-de-shi-yong" class="header-anchor">#</a></h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line">const bodyParser = require(&quot;body-parser&quot;);</span><br><span class="line">const cookieParser = require(&quot;cookie-parser&quot;);</span><br><span class="line">var logger = require(&apos;../log&apos;)</span><br><span class="line"></span><br><span class="line">router.get(&apos;/detailArticle&apos;,function(req,res,next)&#123;</span><br><span class="line"></span><br><span class="line">loger.info(req.headers);</span><br><span class="line">res.end(&quot;goodbye&quot;);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <p>使用时直接引入，即可使用。</p>
 
@@ -515,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">nodejs使用log4js做日志系统#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">log4js的安装#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">log4js配置#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">log4js的使用#</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

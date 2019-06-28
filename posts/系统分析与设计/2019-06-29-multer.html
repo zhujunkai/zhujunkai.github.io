@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="##基于express+multer的文件上传 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 ####环境初始化 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); ####基本使用 - 上传单文件 1234567891011c">
+<meta name="description" content="基于express+multer的文件上传# 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 环境初始化# 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); 基本使用 - 上传单文件# 1234567891011const ap">
 <meta name="keywords" content="系统分析与设计,nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="multer">
 <meta property="og:url" content="http://yoursite.com/posts/系统分析与设计/2019-06-29-multer.html">
 <meta property="og:site_name" content="722_King">
-<meta property="og:description" content="##基于express+multer的文件上传 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 ####环境初始化 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); ####基本使用 - 上传单文件 1234567891011c">
+<meta property="og:description" content="基于express+multer的文件上传# 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 环境初始化# 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); 基本使用 - 上传单文件# 1234567891011const ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T20:08:00.993Z">
+<meta property="og:updated_time" content="2019-06-28T20:28:20.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="multer">
-<meta name="twitter:description" content="##基于express+multer的文件上传 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 ####环境初始化 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); ####基本使用 - 上传单文件 1234567891011c">
+<meta name="twitter:description" content="基于express+multer的文件上传# 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 环境初始化# 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require(&apos;multer&apos;); 基本使用 - 上传单文件# 1234567891011const ap">
 
 
 
@@ -391,17 +391,17 @@
       
 
       
-        <p>##基于express+multer的文件上传</p>
+        <h2><span id="ji-yu-express-multer-de-wen-jian-shang-chuan">基于express+multer的文件上传</span><a href="#ji-yu-express-multer-de-wen-jian-shang-chuan" class="header-anchor">#</a></h2>
 <p>图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。</p>
-<p>####环境初始化</p>
+<h4><span id="huan-jing-chu-shi-hua">环境初始化</span><a href="#huan-jing-chu-shi-hua" class="header-anchor">#</a></h4>
 <p>非常简单，一行命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add multer</span><br></pre></td></tr></table></figure>
 <p>引入：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>);</span><br></pre></td></tr></table></figure>
-<p>####基本使用 - 上传单文件</p>
+<h4><span id="ji-ben-shi-yong-shang-chuan-dan-wen-jian">基本使用 - 上传单文件</span><a href="#ji-ben-shi-yong-shang-chuan-dan-wen-jian" class="header-anchor">#</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> upload = multer(&#123;<span class="attr">dest</span>:path.join(__dirname,<span class="string">'./public/uploads'</span>)&#125;);</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>:<span class="literal">true</span>&#125;));</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>,express.static(<span class="string">'views'</span>));</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/'</span>,upload.single(<span class="string">'file'</span>),(req,res)=&gt;&#123;</span><br><span class="line">  res.send(req.file);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>####diskStorage 指定存储路径和文件名<br>
-上面上传单文件的方法简答粗暴，并且有很大的问题，不能保存文件后缀（可以看上面的文件path，没有后缀）</p>
+<h4><span id="diskstorage-zhi-ding-cun-chu-lu-jing-he-wen-jian-ming">diskStorage 指定存储路径和文件名</span><a href="#diskstorage-zhi-ding-cun-chu-lu-jing-he-wen-jian-ming" class="header-anchor">#</a></h4>
+上面上传单文件的方法简答粗暴，并且有很大的问题，不能保存文件后缀（可以看上面的文件path，没有后缀）
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage = multer.diskStorage(&#123;</span><br><span class="line">  destination: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">    cb(<span class="literal">null</span>, <span class="string">'/tmp/my-uploads'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  filename: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line">    cb(<span class="literal">null</span>, file.fieldname + <span class="string">'-'</span> + <span class="built_in">Date</span>.now())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> upload = multer(&#123; <span class="attr">storage</span>: storage &#125;)</span><br></pre></td></tr></table></figure>
 <p>destination 如果是一个字符串，则路径不需要必须存在，只要能够创建路径就OK</p>
 
@@ -511,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,6 +585,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">基于express+multer的文件上传#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">环境初始化#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">基本使用 - 上传单文件#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">diskStorage 指定存储路径和文件名#</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

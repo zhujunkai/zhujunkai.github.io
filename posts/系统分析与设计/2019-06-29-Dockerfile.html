@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="####dockerfile介绍： 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的">
+<meta name="description" content="dockerfile介绍：# 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的ima">
 <meta name="keywords" content="系统分析与设计,nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dockerfile">
 <meta property="og:url" content="http://yoursite.com/posts/系统分析与设计/2019-06-29-Dockerfile.html">
 <meta property="og:site_name" content="722_King">
-<meta property="og:description" content="####dockerfile介绍： 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的">
+<meta property="og:description" content="dockerfile介绍：# 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的ima">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T20:25:09.642Z">
+<meta property="og:updated_time" content="2019-06-28T20:29:06.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dockerfile">
-<meta name="twitter:description" content="####dockerfile介绍： 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的">
+<meta name="twitter:description" content="dockerfile介绍：# 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的ima">
 
 
 
@@ -391,9 +391,9 @@
       
 
       
-        <p>####dockerfile介绍：</p>
+        <h4><span id="dockerfile-jie-shao">dockerfile介绍：</span><a href="#dockerfile-jie-shao" class="header-anchor">#</a></h4>
 <p>是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的image。相比image这种黑盒子，Dockerfile这种显而易见的脚本更容易被使用者接受，它明确的表明image是怎么产生的。有了Dockerfile，当我们需要定制自己额外的需求时，只需在Dockerfile上添加或者修改指令，重新生成image即可，省去了敲命令的麻烦。</p>
-<p>####Dockerfile 基本框架</p>
+<h4><span id="dockerfile-ji-ben-kuang-jia">Dockerfile 基本框架</span><a href="#dockerfile-ji-ben-kuang-jia" class="header-anchor">#</a></h4>
 <p>Dockerfile一般包含下面几个部分：</p>
 <ul>
 <li>基础镜像：以哪个镜像作为基础进行制作，用法是FROM 基础镜像名称</li>
@@ -402,7 +402,7 @@
 <li>容器启动命令：当基于该镜像的容器启动时需要执行哪些命令，常见的是CMD 命令或ENTRYPOINT</li>
 <li>在本节实验中，我们依次先把这四项信息填入文档。Dockerfile中的#标志后面为注释，可以不用写，另外实验楼的环境不支持中文输入，比较可惜。</li>
 </ul>
-<p>####初始化Dockerfile</p>
+<h4><span id="chu-shi-hua-dockerfile">初始化Dockerfile</span><a href="#chu-shi-hua-dockerfile" class="header-anchor">#</a></h4>
 <p>假设我们的项目名为express,在express项目中创建编辑Dockerfile文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ vim Dockerfile</span><br><span class="line"></span><br><span class="line">FROM node:latest</span><br><span class="line"></span><br><span class="line">RUN mkdir -p /home/www/express</span><br><span class="line">WORKDIR /home/www/express</span><br><span class="line"></span><br><span class="line">COPY . /home/www/express</span><br><span class="line"></span><br><span class="line">RUN npm install</span><br><span class="line"></span><br><span class="line">EXPOSE 3000</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;npm&quot;, &quot;run&quot;]</span><br><span class="line">CMD [&quot;start&quot;]</span><br></pre></td></tr></table></figure>
 <p>这个文件包含了以下命令：</p>
@@ -416,10 +416,10 @@
 <li>ENTRYPOINT [“npm”, “run”] - 容器启动后执行的命令。不可被docker run提供的参数覆盖</li>
 <li>CMD [“start”] - 在容器启动时，执行的命令，可被docker run提供的参数覆盖</li>
 </ul>
-<p>####构建镜像</p>
+<h4><span id="gou-jian-jing-xiang">构建镜像</span><a href="#gou-jian-jing-xiang" class="header-anchor">#</a></h4>
 <p>编写完Dockerfile文件后，就可以通过docker build命令来构建镜像：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker build -t test/express .</span><br></pre></td></tr></table></figure>
-<p>####运行容器</p>
+<h4><span id="yun-xing-rong-qi">运行容器</span><a href="#yun-xing-rong-qi" class="header-anchor">#</a></h4>
 <p>镜像构建完成后，可以通过所构建的镜像创建/运行容器，从而实现express应用的 Docker 化部暑。</p>
 <p>使用tets/express镜像运行一个容器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run -d --name experss-app -p 3000:3000 test/express</span><br></pre></td></tr></table></figure>
@@ -527,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,6 +601,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">dockerfile介绍：#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Dockerfile 基本框架#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">初始化Dockerfile#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">构建镜像#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">运行容器#</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
