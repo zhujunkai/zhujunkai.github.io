@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Dockerfile]]></title>
+    <url>%2Fposts%2F%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%2F2019-06-29-Dockerfile.html</url>
+    <content type="text"><![CDATA[####dockerfile介绍： 是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的image。相比image这种黑盒子，Dockerfile这种显而易见的脚本更容易被使用者接受，它明确的表明image是怎么产生的。有了Dockerfile，当我们需要定制自己额外的需求时，只需在Dockerfile上添加或者修改指令，重新生成image即可，省去了敲命令的麻烦。 ####Dockerfile 基本框架 Dockerfile一般包含下面几个部分： 基础镜像：以哪个镜像作为基础进行制作，用法是FROM 基础镜像名称 维护者信息：需要写下该Dockerfile编写人的姓名或邮箱，用法是MANITAINER 名字/邮箱 镜像操作命令：对基础镜像要进行的改造命令，比如安装新的软件，进行哪些特殊配置等，常见的是RUN 命令 容器启动命令：当基于该镜像的容器启动时需要执行哪些命令，常见的是CMD 命令或ENTRYPOINT 在本节实验中，我们依次先把这四项信息填入文档。Dockerfile中的#标志后面为注释，可以不用写，另外实验楼的环境不支持中文输入，比较可惜。 ####初始化Dockerfile 假设我们的项目名为express,在express项目中创建编辑Dockerfile文件： 123456789101112131415$ vim DockerfileFROM node:latestRUN mkdir -p /home/www/expressWORKDIR /home/www/expressCOPY . /home/www/expressRUN npm installEXPOSE 3000ENTRYPOINT [&quot;npm&quot;, &quot;run&quot;]CMD [&quot;start&quot;] 这个文件包含了以下命令： FROM node:latest - 指定使用最新版本的node基础镜像 RUN mkdir -p /home/www/express - 在容器内创建/home/www/express目录 WORKDIR /home/www/express - 将容器内工作目录设置为/home/www/express COPY . /home/www/express - 将宿主机当前目录下内容复制到镜像/home/www/express目录下 RUN npm install - npm install安装应用所需的NPM包 EXPOSE 3000 - 对外开放容器的3000端口 ENTRYPOINT [“npm”, “run”] - 容器启动后执行的命令。不可被docker run提供的参数覆盖 CMD [“start”] - 在容器启动时，执行的命令，可被docker run提供的参数覆盖 ####构建镜像 编写完Dockerfile文件后，就可以通过docker build命令来构建镜像： 1$ sudo docker build -t test/express . ####运行容器 镜像构建完成后，可以通过所构建的镜像创建/运行容器，从而实现express应用的 Docker 化部暑。 使用tets/express镜像运行一个容器： 1$ sudo docker run -d --name experss-app -p 3000:3000 test/express 在以上操作中，我们通过test/express镜像运行了容器，并将容器命名为experss-app。运行容器，我们还指定了-d参数，该参数使容器以后台的方式运行。而-p参数将宿主机的3000端口映射到了容器的3000端口。运行容器后，可以通过docker ps命令看到运行中的容器。此时可通过localhost:3000访问服务。]]></content>
+      <categories>
+        <category>系统分析与设计</category>
+      </categories>
+      <tags>
+        <tag>系统分析与设计</tag>
+        <tag>nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[multer]]></title>
     <url>%2Fposts%2F%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%2F2019-06-29-multer.html</url>
     <content type="text"><![CDATA[##基于express+multer的文件上传 图片上传是web开发中经常用到的功能，常用的开源组件有multer、formidable等，借助这两个开源组件，可以轻松搞定图片上传。 ####环境初始化 非常简单，一行命令。 1yarn add multer 引入： 1const multer = require('multer'); ####基本使用 - 上传单文件 1234567891011const app = express();const upload = multer(&#123;dest:path.join(__dirname,'./public/uploads')&#125;);app.use(bodyParser.urlencoded(&#123;extended:true&#125;));app.use(bodyParser.json());app.use('/',express.static('views'));app.post('/',upload.single('file'),(req,res)=&gt;&#123; res.send(req.file);&#125;); ####diskStorage 指定存储路径和文件名 上面上传单文件的方法简答粗暴，并且有很大的问题，不能保存文件后缀（可以看上面的文件path，没有后缀） 12345678910var storage = multer.diskStorage(&#123; destination: function (req, file, cb) &#123; cb(null, '/tmp/my-uploads') &#125;, filename: function (req, file, cb) &#123; cb(null, file.fieldname + '-' + Date.now()) &#125;&#125;)var upload = multer(&#123; storage: storage &#125;) destination 如果是一个字符串，则路径不需要必须存在，只要能够创建路径就OK]]></content>
